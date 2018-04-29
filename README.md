@@ -1,5 +1,7 @@
 # Image Retrieval Engine Based on Keras
 
+参考：[Image Retrieval Engine Based on Keras][https://github.com/willard-yuan/flask-keras-cnn-image-retrieval]
+
 ## 环境
 
 ```python
