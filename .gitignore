@@ -56,3 +56,10 @@ docs/_build/
 
 # PyBuilder
 target/
+
+database/
+test_image/
+all_data/
+
+
+\.ipynb_checkpoints/

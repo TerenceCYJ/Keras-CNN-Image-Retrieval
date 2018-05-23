@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Author: yongyuan.name
 from extract_cnn_vgg16_keras import VGGNet
+from keras.utils import plot_model
 
 import numpy as np
 import h5py
@@ -42,6 +43,7 @@ model = VGGNet()
 
 # extract query image's feature, compute simlarity score and sort
 queryVec = model.extract_feat(queryDir)
+
 scores = np.dot(queryVec, feats.T)
 rank_ID = np.argsort(scores)[::-1]
 rank_score = scores[rank_ID]

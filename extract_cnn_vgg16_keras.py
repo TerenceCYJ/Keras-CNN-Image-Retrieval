@@ -7,6 +7,8 @@ from numpy import linalg as LA
 from keras.applications.vgg16 import VGG16
 from keras.preprocessing import image
 from keras.applications.vgg16 import preprocess_input
+import matplotlib.pyplot as plt
+from PIL import Image
 
 class VGGNet:
     def __init__(self):
@@ -29,5 +31,11 @@ class VGGNet:
         img = np.expand_dims(img, axis=0)
         img = preprocess_input(img)
         feat = self.model.predict(img)
+        print("feat_type=",feat.shape)
+        #
+        #feat_p=np.squeeze(feat,axis=0)
+        #feat_p = np.reshape(feat, (16,32))
+        #plt.imshow(feat_p)
+        #plt.show()
         norm_feat = feat[0]/LA.norm(feat[0])
         return norm_feat
